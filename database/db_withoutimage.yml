@@ -36,3 +36,23 @@ spec:
           path: /data
       # this field is optional
           type: DirectoryOrCreate
+
+
+
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mydb
+  labels:
+    app: mysql
+spec:
+  ports:
+  - port: 3306
+    protocol: TCP
+  selector:
+    app: mysql
